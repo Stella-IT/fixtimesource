@@ -92,7 +92,8 @@ int main(int argc, char *argv[]) {
         }
         if(gclc*gclb == 1) {
             freopen("/etc/default/grub", "a+", etc_default_grub);
-            fprintf(etc_default_grub, "# Change timesource to GRUB\nGRUB_CMDLINE_LINUX=\"clocksource=tsc tsc=reliable hongfarm=babo are_you_editing_etc_default_grub=see_from_last_line\"");
+            fprintf(etc_default_grub, "# Change timesource to TSC\nGRUB_CMDLINE_LINUX=\"clocksource=tsc tsc=reliable hongfarm=babo are_you_editing_etc_default_grub=see_from_last_line\"");
+            system("update-grub");
             printf("[ OK ]\n");
             fclose(etc_default_grub);
             fprintf(stderr, "Fixed! Thanks for using Stella IT!\n");
