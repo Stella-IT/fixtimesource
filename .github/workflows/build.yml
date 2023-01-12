@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Configure
-      run: apt update && apt install clang
+      run: sudo apt update && sudo apt install clang -y
     - name: Build
       run: clang fixts.c -o fixts.c -o fixts
     - name: Upload a Build Artifact
